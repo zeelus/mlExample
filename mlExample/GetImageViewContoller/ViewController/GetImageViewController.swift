@@ -36,10 +36,11 @@ extension GetImageViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let catchedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            print(catchedImage)
+            let viewModel = RecognizerImageViewModel(image: catchedImage)
+            let viewController = StoryboardManager.getRecognizerImageViewController(viewModel: viewModel)
+            self.navigationController?.show(viewController, sender: self)
         }
         
-        
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: false, completion: nil)
     }
 }

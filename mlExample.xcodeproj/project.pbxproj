@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CC3270B60E043799B03E70F /* Pods_mlExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6FF341091550D23A012BEA /* Pods_mlExample.framework */; };
+		D93D4B531F670C5C00E52917 /* RecognizerImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D4B521F670C5C00E52917 /* RecognizerImageViewModel.swift */; };
+		D93D4B571F67169400E52917 /* RecognizerImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D4B561F67169400E52917 /* RecognizerImageViewController.swift */; };
+		D93D4B591F6716AC00E52917 /* RecognizerImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93D4B581F6716AC00E52917 /* RecognizerImage.storyboard */; };
+		D93D4B5C1F67171A00E52917 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D4B5B1F67171A00E52917 /* StoryboardManager.swift */; };
 		D97ED2801F66CA1B00FEFACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97ED27F1F66CA1B00FEFACD /* AppDelegate.swift */; };
 		D97ED2871F66CA1B00FEFACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D97ED2861F66CA1B00FEFACD /* Assets.xcassets */; };
 		D97ED28A1F66CA1B00FEFACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97ED2881F66CA1B00FEFACD /* LaunchScreen.storyboard */; };
@@ -16,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		036C8B4A142588D74968202B /* Pods-mlExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mlExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mlExample/Pods-mlExample.debug.xcconfig"; sourceTree = "<group>"; };
+		2A6DC0F01E8681A9FBD2269F /* Pods-mlExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mlExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-mlExample/Pods-mlExample.release.xcconfig"; sourceTree = "<group>"; };
+		2B6FF341091550D23A012BEA /* Pods_mlExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mlExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93D4B521F670C5C00E52917 /* RecognizerImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerImageViewModel.swift; sourceTree = "<group>"; };
+		D93D4B561F67169400E52917 /* RecognizerImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerImageViewController.swift; sourceTree = "<group>"; };
+		D93D4B581F6716AC00E52917 /* RecognizerImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecognizerImage.storyboard; sourceTree = "<group>"; };
+		D93D4B5B1F67171A00E52917 /* StoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
 		D97ED27C1F66CA1B00FEFACD /* mlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97ED27F1F66CA1B00FEFACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D97ED2861F66CA1B00FEFACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,17 +43,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC3270B60E043799B03E70F /* Pods_mlExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7056E50C289B06D1E36F317A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B6FF341091550D23A012BEA /* Pods_mlExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9ACB07ECB1384D91BD5CCD04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				036C8B4A142588D74968202B /* Pods-mlExample.debug.xcconfig */,
+				2A6DC0F01E8681A9FBD2269F /* Pods-mlExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D93D4B4D1F67076F00E52917 /* RecognizeImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D93D4B551F67167200E52917 /* View */,
+				D93D4B541F67166A00E52917 /* ViewController */,
+				D93D4B511F670C2E00E52917 /* ViewModel */,
+			);
+			path = RecognizeImageViewController;
+			sourceTree = "<group>";
+		};
+		D93D4B511F670C2E00E52917 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D93D4B521F670C5C00E52917 /* RecognizerImageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D93D4B541F67166A00E52917 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D93D4B561F67169400E52917 /* RecognizerImageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D93D4B551F67167200E52917 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D93D4B581F6716AC00E52917 /* RecognizerImage.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D93D4B5A1F6716E700E52917 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D93D4B5B1F67171A00E52917 /* StoryboardManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D97ED2731F66CA1A00FEFACD = {
 			isa = PBXGroup;
 			children = (
 				D97ED27E1F66CA1B00FEFACD /* mlExample */,
 				D97ED27D1F66CA1B00FEFACD /* Products */,
+				9ACB07ECB1384D91BD5CCD04 /* Pods */,
+				7056E50C289B06D1E36F317A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +130,8 @@
 		D97ED27E1F66CA1B00FEFACD /* mlExample */ = {
 			isa = PBXGroup;
 			children = (
+				D93D4B5A1F6716E700E52917 /* Utilities */,
+				D93D4B4D1F67076F00E52917 /* RecognizeImageViewController */,
 				D97ED2941F66CC5B00FEFACD /* GetImageViewContoller */,
 				D97ED2911F66CBF200FEFACD /* ML Model */,
 				D97ED27F1F66CA1B00FEFACD /* AppDelegate.swift */,
@@ -106,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D97ED28E1F66CA1B00FEFACD /* Build configuration list for PBXNativeTarget "mlExample" */;
 			buildPhases = (
+				F30F1E609CCCD72E49AFEA49 /* [CP] Check Pods Manifest.lock */,
 				D97ED2781F66CA1B00FEFACD /* Sources */,
 				D97ED2791F66CA1B00FEFACD /* Frameworks */,
 				D97ED27A1F66CA1B00FEFACD /* Resources */,
+				6A0ED5B2B7244CB47E34F019 /* [CP] Embed Pods Frameworks */,
+				E4F35BC6118A2ADAC755EFF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93D4B591F6716AC00E52917 /* RecognizerImage.storyboard in Resources */,
 				D97ED2981F66CC9D00FEFACD /* GetImage.storyboard in Resources */,
 				D97ED28A1F66CA1B00FEFACD /* LaunchScreen.storyboard in Resources */,
 				D97ED2871F66CA1B00FEFACD /* Assets.xcassets in Resources */,
@@ -165,14 +245,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A0ED5B2B7244CB47E34F019 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mlExample/Pods-mlExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4F35BC6118A2ADAC755EFF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mlExample/Pods-mlExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F30F1E609CCCD72E49AFEA49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D97ED2781F66CA1B00FEFACD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93D4B531F670C5C00E52917 /* RecognizerImageViewModel.swift in Sources */,
 				D97ED29A1F66CCC100FEFACD /* GetImageViewController.swift in Sources */,
+				D93D4B5C1F67171A00E52917 /* StoryboardManager.swift in Sources */,
 				D97ED2801F66CA1B00FEFACD /* AppDelegate.swift in Sources */,
 				D97ED2931F66CC3800FEFACD /* MobileNet.mlmodel in Sources */,
+				D93D4B571F67169400E52917 /* RecognizerImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,13 +430,14 @@
 		};
 		D97ED28F1F66CA1B00FEFACD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 036C8B4A142588D74968202B /* Pods-mlExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 98845Q4AQK;
+				DEVELOPMENT_TEAM = QJ67W5JP2G;
 				INFOPLIST_FILE = mlExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeelus.mlExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeelus.mlExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -314,13 +446,14 @@
 		};
 		D97ED2901F66CA1B00FEFACD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6DC0F01E8681A9FBD2269F /* Pods-mlExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 98845Q4AQK;
+				DEVELOPMENT_TEAM = QJ67W5JP2G;
 				INFOPLIST_FILE = mlExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeelus.mlExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeelus.mlExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
