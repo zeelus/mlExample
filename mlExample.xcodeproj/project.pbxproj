@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D97ED2801F66CA1B00FEFACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97ED27F1F66CA1B00FEFACD /* AppDelegate.swift */; };
-		D97ED2821F66CA1B00FEFACD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97ED2811F66CA1B00FEFACD /* ViewController.swift */; };
-		D97ED2851F66CA1B00FEFACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97ED2831F66CA1B00FEFACD /* Main.storyboard */; };
 		D97ED2871F66CA1B00FEFACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D97ED2861F66CA1B00FEFACD /* Assets.xcassets */; };
 		D97ED28A1F66CA1B00FEFACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97ED2881F66CA1B00FEFACD /* LaunchScreen.storyboard */; };
+		D97ED2931F66CC3800FEFACD /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D97ED2921F66CC3000FEFACD /* MobileNet.mlmodel */; };
+		D97ED2981F66CC9D00FEFACD /* GetImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97ED2971F66CC9D00FEFACD /* GetImage.storyboard */; };
+		D97ED29A1F66CCC100FEFACD /* GetImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97ED2991F66CCC100FEFACD /* GetImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D97ED27C1F66CA1B00FEFACD /* mlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97ED27F1F66CA1B00FEFACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D97ED2811F66CA1B00FEFACD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D97ED2841F66CA1B00FEFACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D97ED2861F66CA1B00FEFACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D97ED2891F66CA1B00FEFACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D97ED28B1F66CA1B00FEFACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D97ED2921F66CC3000FEFACD /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		D97ED2971F66CC9D00FEFACD /* GetImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GetImage.storyboard; sourceTree = "<group>"; };
+		D97ED2991F66CCC100FEFACD /* GetImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		D97ED27E1F66CA1B00FEFACD /* mlExample */ = {
 			isa = PBXGroup;
 			children = (
+				D97ED2941F66CC5B00FEFACD /* GetImageViewContoller */,
+				D97ED2911F66CBF200FEFACD /* ML Model */,
 				D97ED27F1F66CA1B00FEFACD /* AppDelegate.swift */,
-				D97ED2811F66CA1B00FEFACD /* ViewController.swift */,
-				D97ED2831F66CA1B00FEFACD /* Main.storyboard */,
 				D97ED2861F66CA1B00FEFACD /* Assets.xcassets */,
 				D97ED2881F66CA1B00FEFACD /* LaunchScreen.storyboard */,
 				D97ED28B1F66CA1B00FEFACD /* Info.plist */,
 			);
 			path = mlExample;
+			sourceTree = "<group>";
+		};
+		D97ED2911F66CBF200FEFACD /* ML Model */ = {
+			isa = PBXGroup;
+			children = (
+				D97ED2921F66CC3000FEFACD /* MobileNet.mlmodel */,
+			);
+			path = "ML Model";
+			sourceTree = "<group>";
+		};
+		D97ED2941F66CC5B00FEFACD /* GetImageViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				D97ED2961F66CC8300FEFACD /* View */,
+				D97ED2951F66CC7B00FEFACD /* ViewController */,
+			);
+			path = GetImageViewContoller;
+			sourceTree = "<group>";
+		};
+		D97ED2951F66CC7B00FEFACD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D97ED2991F66CCC100FEFACD /* GetImageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D97ED2961F66CC8300FEFACD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D97ED2971F66CC9D00FEFACD /* GetImage.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97ED2981F66CC9D00FEFACD /* GetImage.storyboard in Resources */,
 				D97ED28A1F66CA1B00FEFACD /* LaunchScreen.storyboard in Resources */,
 				D97ED2871F66CA1B00FEFACD /* Assets.xcassets in Resources */,
-				D97ED2851F66CA1B00FEFACD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +170,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D97ED2821F66CA1B00FEFACD /* ViewController.swift in Sources */,
+				D97ED29A1F66CCC100FEFACD /* GetImageViewController.swift in Sources */,
 				D97ED2801F66CA1B00FEFACD /* AppDelegate.swift in Sources */,
+				D97ED2931F66CC3800FEFACD /* MobileNet.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D97ED2831F66CA1B00FEFACD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D97ED2841F66CA1B00FEFACD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D97ED2881F66CA1B00FEFACD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -275,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 98845Q4AQK;
 				INFOPLIST_FILE = mlExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeelus.mlExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 98845Q4AQK;
 				INFOPLIST_FILE = mlExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeelus.mlExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
