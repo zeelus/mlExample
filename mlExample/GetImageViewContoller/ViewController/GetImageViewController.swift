@@ -22,6 +22,11 @@ class GetImageViewController: UIViewController {
         self.showImagePicher(with: .photoLibrary)
     }
     
+    @IBAction func getRealTime(_ sender: Any) {
+        let vc  = StoryboardManager.getRealTime()
+        self.show(vc, sender: self)
+    }
+    
     private func showImagePicher(with type:  UIImagePickerControllerSourceType) {
         let picker = UIImagePickerController()
         picker.sourceType = type

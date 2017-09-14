@@ -48,13 +48,13 @@ class RecognizerImageViewModel {
     
     private func setupVision() {
         
-        if let model  = try? VNCoreMLModel(for: MobileNet().model) {
+        if let model  = try? VNCoreMLModel(for: Inceptionv3().model) {
             self.request = VNCoreMLRequest(model: model, completionHandler: {[weak self] (request, error) in
                 guard let results = request.results as? [VNClassificationObservation]
                     else { print("Classification error \(error.debugDescription)"); return }
 
                 let sortClassification = results.sorted(by: { (lth, rth) -> Bool in
-                    return rth.confidence > lth.confidence
+                    return rth.confidence < lth.confidence
                 })
                 
                 self?._bestClassification.value = sortClassification.first

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7j6-BS-i5y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Real Time View Controller-->
+        <scene sceneID="WSg-o6-DGe">
+            <objects>
+                <viewController id="7j6-BS-i5y" customClass="RealTimeViewController" customModule="mlExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U9q-04-lLP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kTx-4K-oaM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kTx-4K-oaM" firstAttribute="leading" secondItem="CK8-cl-21k" secondAttribute="leading" id="JVs-e3-JUY"/>
+                            <constraint firstItem="kTx-4K-oaM" firstAttribute="trailing" secondItem="CK8-cl-21k" secondAttribute="trailing" id="Pfk-NS-de7"/>
+                            <constraint firstItem="kTx-4K-oaM" firstAttribute="top" secondItem="U9q-04-lLP" secondAttribute="top" id="U2F-IO-rc5"/>
+                            <constraint firstAttribute="bottom" secondItem="kTx-4K-oaM" secondAttribute="bottom" id="bFl-TC-poC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CK8-cl-21k"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="kTx-4K-oaM" id="JP6-o4-BTM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ke-2t-KaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="109"/>
+        </scene>
+    </scenes>
+</document>

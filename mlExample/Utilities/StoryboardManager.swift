@@ -22,4 +22,8 @@ struct StoryboardManager {
     static func getGetImage() -> UIViewController {
         return UIStoryboard(name: "GetImage", bundle: nil).instantiateInitialViewController()!
     }
+    
+    static func getRealTime() -> UIViewController {
+        return UIStoryboard(name: "RealTime", bundle: nil).instantiateInitialViewController()!
+    }
 }

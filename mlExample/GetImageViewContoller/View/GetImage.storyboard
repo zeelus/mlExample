@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIt-gu-coj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIt-gu-coj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,16 +21,16 @@
                                 <rect key="frame" x="16" y="183.5" width="343" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-mx-1zY">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_alt_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="JKf-qX-gJE">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="gi5-95-vuQ"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sz-ud-Pha">
-                                                <rect key="frame" x="70" y="0.0" width="273" height="150"/>
+                                                <rect key="frame" x="70" y="0.0" width="273" height="100"/>
                                                 <state key="normal" title="Get camera Image">
                                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -42,21 +41,41 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-xF-jv9">
-                                        <rect key="frame" x="0.0" y="150" width="343" height="150"/>
+                                        <rect key="frame" x="0.0" y="100" width="343" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_roll_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="9vo-Uc-fm7">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="LPz-Xu-IPI"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2l-Gs-7Qz">
-                                                <rect key="frame" x="70" y="0.0" width="273" height="150"/>
+                                                <rect key="frame" x="70" y="0.0" width="273" height="100"/>
                                                 <state key="normal" title="Get from roll">
                                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="getRollImage:" destination="MZJ-lc-WMF" eventType="touchUpInside" id="aRH-2E-zFN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-6b-eoo">
+                                        <rect key="frame" x="0.0" y="200" width="343" height="100"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_alt_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="gtU-oP-M0l">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="4tE-D9-noH"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-QK-Nq7">
+                                                <rect key="frame" x="70" y="0.0" width="273" height="100"/>
+                                                <state key="normal" title="RealTime">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="getRealTime:" destination="MZJ-lc-WMF" eventType="touchUpInside" id="8p7-9Z-5QO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -86,7 +105,7 @@
             <objects>
                 <navigationController id="hIt-gu-coj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OwV-9f-Enb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
