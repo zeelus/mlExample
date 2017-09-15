@@ -75,6 +75,18 @@ class CameraCapture: NSObject{
         return devices.first
     }
     
+    func resume() {
+        self.cameraQueue.sync {
+            self.captureSession.startRunning()
+        }
+    }
+    
+    func stop() {
+        self.cameraQueue.sync {
+            self.captureSession.stopRunning()
+        }
+    }
+    
 }
 
 extension CameraCapture : AVCaptureVideoDataOutputSampleBufferDelegate {

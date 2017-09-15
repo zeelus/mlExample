@@ -20,23 +20,37 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kTx-4K-oaM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyu-Fe-7Kr">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NXH-fm-eKm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CK8-cl-21k" firstAttribute="trailing" secondItem="lyu-Fe-7Kr" secondAttribute="trailing" id="G98-J6-e9s"/>
                             <constraint firstItem="kTx-4K-oaM" firstAttribute="leading" secondItem="CK8-cl-21k" secondAttribute="leading" id="JVs-e3-JUY"/>
                             <constraint firstItem="kTx-4K-oaM" firstAttribute="trailing" secondItem="CK8-cl-21k" secondAttribute="trailing" id="Pfk-NS-de7"/>
                             <constraint firstItem="kTx-4K-oaM" firstAttribute="top" secondItem="U9q-04-lLP" secondAttribute="top" id="U2F-IO-rc5"/>
+                            <constraint firstAttribute="bottom" secondItem="lyu-Fe-7Kr" secondAttribute="bottom" id="URR-d4-jnb"/>
                             <constraint firstAttribute="bottom" secondItem="kTx-4K-oaM" secondAttribute="bottom" id="bFl-TC-poC"/>
+                            <constraint firstItem="lyu-Fe-7Kr" firstAttribute="leading" secondItem="CK8-cl-21k" secondAttribute="leading" id="rIc-g2-gXz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CK8-cl-21k"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="kTx-4K-oaM" id="JP6-o4-BTM"/>
+                        <outlet property="nameLabel" destination="lyu-Fe-7Kr" id="0gd-lM-dRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ke-2t-KaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="109"/>
+            <point key="canvasLocation" x="160.80000000000001" y="108.39580209895054"/>
         </scene>
     </scenes>
 </document>
