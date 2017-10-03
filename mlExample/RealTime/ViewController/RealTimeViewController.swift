@@ -22,8 +22,8 @@ class RealTimeViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    fileprivate var _analize = false
-    let queue = DispatchQueue(label: "imageAnalize")
+    private var currentFrame: CVImageBuffer? = nil
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +38,20 @@ class RealTimeViewController: UIViewController {
             .bind(to: self.nameLabel.rx.text)
             .addDisposableTo(self.disposeBag)
         
-        self.timer = Observable<Int>.interval(1, scheduler: SerialDispatchQueueScheduler(queue: self.queue, internalSerialQueueName: "imageAnalize"))
+        self.timer = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
         self.timer?.subscribe(onNext: { [weak self] (_) in
-            self?._analize = true
+            
+            if let frame = self?.currentFrame {
+                self?.viewModel.analize(frame: frame)
+            }
+            
             }, onError: nil, onCompleted: nil, onDisposed: nil)
             .addDisposableTo(self.disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.camera.stop()
         self.camera.delegate = nil
+        self.camera.stop()
     }
     
 }
@@ -60,14 +64,8 @@ extension RealTimeViewController: CameraCaptureDelegate {
             self.showFrame(image: uiImage)
         }
         
-        
-        self.queue.sync {
-            if self._analize {
-                self._analize = false
-                self.viewModel.analize(frame: frame)
-            }
-        }
-        
+        self.currentFrame = frame
+
     }
     
     func showFrame(image: UIImage) {

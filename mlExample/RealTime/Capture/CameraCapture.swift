@@ -13,12 +13,14 @@ protocol CameraCaptureDelegate {
     func capture(frame: CVImageBuffer)
 }
 
-class CameraCapture: NSObject{
+class CameraCapture: NSObject {
     
     private let cameraQueue = DispatchQueue(label: "cameraQueue")
     private let captureSession = AVCaptureSession()
     
     public var delegate: CameraCaptureDelegate? = nil
+    
+    private var frame: CVImageBuffer?
     
     private var isPermission = false
     
@@ -28,6 +30,7 @@ class CameraCapture: NSObject{
         self.cameraQueue.sync {
             self.setupCameraCapture()
             self.captureSession.startRunning()
+            self.setupTime()
         }
         
     }
@@ -37,8 +40,9 @@ class CameraCapture: NSObject{
         case .authorized:
             self.isPermission = true
         case .notDetermined:
-            //TODo show access requesst
-            break
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: {[weak self] (permission) in
+                self?.isPermission = permission
+            })
         default:
             self.isPermission = true
             //show information  to user about access denite
@@ -87,14 +91,22 @@ class CameraCapture: NSObject{
         }
     }
     
+    private func setupTime() {
+        Timer.scheduledTimer(timeInterval: 1/30, target: self, selector: #selector(sendFrame), userInfo: nil, repeats: true)
+    }
+    
+    @objc func sendFrame() {
+        if let frame = self.frame {
+            self.delegate?.capture(frame: frame)
+        }
+    }
+    
 }
 
 extension CameraCapture : AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        if let frame = self.transformToCVImageBuffer(sampleBuffer: sampleBuffer) {
-            self.delegate?.capture(frame: frame)
-        }
+        self.frame = self.transformToCVImageBuffer(sampleBuffer: sampleBuffer)
     }
     
     private func transformToCVImageBuffer(sampleBuffer: CMSampleBuffer) ->  CVImageBuffer? {

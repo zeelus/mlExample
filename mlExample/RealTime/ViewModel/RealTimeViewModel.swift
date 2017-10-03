@@ -18,12 +18,16 @@ class RealTimeViewModel {
     private var request: VNCoreMLRequest? = nil
     private var handler: VNImageRequestHandler? = nil
     
+    
     init() {
-        self.model = try? VNCoreMLModel(for: Inceptionv3().model)
-        if let model = self.model{
-            self.request = VNCoreMLRequest(model: model, completionHandler: {[weak self] (request, error) in
-                self?.analize(request: request)
-            })
+        DispatchQueue.global(qos: .background).async {
+            self.model = try? VNCoreMLModel(for: Inceptionv3().model)
+            if let model = self.model{
+                self.request = VNCoreMLRequest(model: model, completionHandler: {[weak self] (request, error) in
+                    self?.analize(request: request)
+                })
+                }
+            
         }
     }
     
@@ -38,9 +42,11 @@ class RealTimeViewModel {
     }
     
     func analize(frame: CVImageBuffer) {
-        if let request = self.request {
-            self.handler = VNImageRequestHandler(cvPixelBuffer: frame, options: [:])
-            try? self.handler?.perform([request])
+        DispatchQueue.global(qos: .background).async {
+            if let request = self.request {
+                self.handler = VNImageRequestHandler(cvPixelBuffer: frame, options: [:])
+                try? self.handler?.perform([request])
+            }
         }
     }
     
@@ -51,7 +57,7 @@ class RealTimeViewModel {
         let sortClassification = results.sorted(by: { (lth, rth) -> Bool in
             return rth.confidence < lth.confidence
         })
-        
+
         if let firstResult = sortClassification.first {
             self._classification.value = firstResult
         }
